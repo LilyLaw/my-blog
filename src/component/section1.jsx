@@ -8,6 +8,8 @@ class Section1 extends React.Component{
 		let left = this.refs.left , right = this.refs.right,
 			{innerWidth,innerHeight} = window;
 		console.log(innerWidth,innerHeight);
+
+		
 	}
 	render(){
 		return <div>
