@@ -43,7 +43,22 @@ class App extends React.Component {
 		return <div className="homepage">
 			<div className="bgbox" ref='bgbox'>
 				<div className="bgimg" ref="bgimg">
-					<div className="bgshadow"></div>
+					<div className="bgshadow">
+						<div className="conbox">
+							<h1>路立琳的个人网站</h1>
+							<ul>
+								<li>
+									<a href="https://github.com/LilyLaw">我的git</a>
+								</li>
+								<li>
+									<a href="https://www.jianshu.com/">我的简书</a>
+								</li>
+								<li>
+									<a href="#">我的线上项目</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

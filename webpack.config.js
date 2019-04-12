@@ -44,7 +44,8 @@ module.exports = {
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:'路立琳的个人空间',
-			template: './src/index.html'
+			template: './src/index.html',
+			favicon: './src/favicon.ico'
 		})
 	],
 	devServer: {
