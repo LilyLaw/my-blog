@@ -48,13 +48,13 @@ class App extends React.Component {
 							<h1>路立琳的个人网站</h1>
 							<ul>
 								<li>
-									<a href="https://github.com/LilyLaw">我的git</a>
+									<a target='_blank' href="https://github.com/LilyLaw">我的git</a>
 								</li>
 								<li>
-									<a href="https://www.jianshu.com/">我的简书</a>
+									<a target='_blank' href="https://www.jianshu.com/u/cc5b1117197a">我的简书</a>
 								</li>
 								<li>
-									<a href="#">我的线上项目</a>
+									<a target='_blank' href="#">我的线上项目</a>
 								</li>
 							</ul>
 						</div>

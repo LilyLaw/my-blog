@@ -1,23 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	entry: './src/app.jsx',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/dist/',
 		filename: 'js/app.jsx'
 	},
 	module:{
 		rules:[
-			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader'],
-			},
-			{
-				test: /\.less$/,
-				use: ['style-loader', 'css-loader', 'less-loader']
-			},
 			{
 				test: /\.jsx$/,
 				exclude: /(node_modules)/,
@@ -27,6 +21,31 @@ module.exports = {
 						presets:['@babel/preset-env','@babel/preset-react']
 					}
 				}
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: process.env.NODE_ENV === 'development',
+						},
+					},
+					'css-loader'
+				]
+			},
+			{
+				test: /\.less$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: process.env.NODE_ENV === 'development',
+						},
+					},
+					'css-loader',
+					'less-loader'
+				]
 			},
 			{
 				test: /\.(png|jpg|gif|bmp)$/i,
@@ -43,10 +62,13 @@ module.exports = {
 	},
 	plugins:[
 		new HtmlWebpackPlugin({
-			title:'路立琳的个人空间',
+			title:'我的个人空间',
 			template: './src/index.html',
 			favicon: './src/favicon.ico'
-		})
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].css'
+		}),
 	],
 	devServer: {
 		port:3011,
