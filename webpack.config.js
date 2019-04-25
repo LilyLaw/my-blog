@@ -8,12 +8,12 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/dist/',
-		filename: 'js/app.jsx'
+		filename: 'app.js'
 	},
 	module:{
 		rules:[
 			{
-				test: /\.jsx$/,
+				test: /\.m?jsx$/,
 				exclude: /(node_modules)/,
 				use: {
 					loader: 'babel-loader',
@@ -23,29 +23,17 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: process.env.NODE_ENV === 'development',
-						},
-					},
-					'css-loader'
-				]
-			},
-			{
 				test: /\.less$/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: process.env.NODE_ENV === 'development',
-						},
-					},
-					'css-loader',
-					'less-loader'
-				]
+			          {
+			            loader: MiniCssExtractPlugin.loader,
+			            options: {
+			              hmr: process.env.NODE_ENV === 'development',
+			            },
+			          },
+			          'css-loader',
+			          'less-loader',
+		        ],
 			},
 			{
 				test: /\.(png|jpg|gif|bmp)$/i,
@@ -67,8 +55,13 @@ module.exports = {
 			favicon: './src/favicon.ico'
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].css'
+			filename: 'style.css',
+			chunkFilename: '[id].css',
 		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name:'common',
+			filename:'js/base.js'
+		})
 	],
 	devServer: {
 		port:3011,

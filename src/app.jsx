@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Section1 from './component/section1.jsx';
-import './style.less';
+import Stylecss from './style.less';
 import img from "./img/bg.jpg";
 
 class App extends React.Component {
