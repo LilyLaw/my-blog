@@ -5,8 +5,8 @@
   "author": "LilyLaw <1444987087@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node_modules\\.bin\\webpack-dev-server",
-    "dist": "node_modules\\.bin\\webpack -p"
+    "dev": " npx webpack-dev-server --config webpack.develop.config.js",
+    "dist": "npx webpack --config webpack.product.config.js"
   },
   "devDependencies": {
     "@babel/core": "7.1.1",
@@ -27,6 +27,7 @@
   "dependencies": {
     "lodash": "4.17.11",
     "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "react-dom": "16.7.0",
+    "webpack-merge": "^4.2.1"
   }
 }

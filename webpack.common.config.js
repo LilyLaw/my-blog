@@ -1,5 +1,5 @@
-const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path'),
+	HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry:'./src/app.jsx',

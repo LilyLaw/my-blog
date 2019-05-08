@@ -1,7 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const commonConf = require('./webpack.common.config.js');
+const merge = require('webpack-merge');
 
-module.exports = {
-	mode: 'production',
+let proConf = {
 	module:{
 		rules:[
 			{
@@ -27,3 +28,5 @@ module.exports = {
 		})
 	]
 }
+
+module.exports = merge(commonConf,proConf);
