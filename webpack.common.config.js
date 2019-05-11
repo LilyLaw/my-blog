@@ -10,14 +10,14 @@ module.exports = {
 	module:{
 		rules:[
 			{
-				test: /\.(png|jpg|jpeg|gif|bmp)$/i,
+				test: /\.(png|jpg|gif|svg|jpeg)$/,
 				use:[
 					{
 						loader: 'url-loader',
 						options: {
-							limit: 8192
+							limit : 10000
 						}
-					}
+					},
 				]
 			}
 		]
