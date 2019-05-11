@@ -1,10 +1,22 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const commonConf = require('./webpack.common.config.js');
+let commonConf = require('./webpack.common.config.js');
 const merge = require('webpack-merge');
 
 let proConf = {
 	module:{
 		rules:[
+			{
+				test: /\.js$/,
+				exclude: /(node_modules)/,
+				use:[
+					{
+						loader: 'babel-loader',
+						options: {
+							presets:['@babel/preset-env','@babel/preset-react']
+						}
+					}
+				]
+			},
 			{
 				test: /\.css$/,
 				use: [

@@ -1,17 +1,29 @@
-const merge = require('webpack-merge'),
-	commonConf = require('./webpack.common.config.js');
+const merge = require('webpack-merge');
+let	commonConf = require('./webpack.common.config.js');
 
 let devConf = {
-	devtool: 'inline-source-map',	// 使用sourcemap定位代码
 	module:{
 		rules:[
 			{
+				test: /\.js$/,
+				exclude: /(node_modules)/,
+				use:[
+					{
+						loader: 'babel-loader',
+						options: {
+							presets:['@babel/preset-env','@babel/preset-react']
+						}
+					},
+					'eslint-loader'
+				]
+			},
+			{
 				test: /\.css$/,
-				loader: ['style-loader','css-loader']
+				use: ['style-loader','css-loader']
 			},
 			{
 				test: /\.less/,
-				loader: ['style-loader','css-loader','less-loader']
+				use: ['style-loader','css-loader','less-loader']
 			}
 		]
 	},

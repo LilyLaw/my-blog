@@ -1,32 +1,24 @@
-const path = require('path'),
-	HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry:'./src/app.jsx',
+	entry:'./src/app.js',
 	output:{
-		path: path.resolev(__dirname,'dist'),
+		path: path.resolve(__dirname,'dist'),
 		filename: 'app.js'
 	},
 	module:{
 		rules:[
 			{
-				test: /\.jsx$/,
-				exclude: /(node_modules)/,
-				use:{
-					loader: 'babel-loader',
-					options: {
-						presets:['@babel/preset-env','@babel/preset-react']
+				test: /\.(png|jpg|jpeg|gif|bmp)$/i,
+				use:[
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 8192
+						}
 					}
-				}
-			},
-			{
-				test: /\.(png|jpg|jpeg|gif|bmp)$/i
-				use:{
-					loader: 'url-loader',
-					options: {
-						limit: 8192
-					}
-				}
+				]
 			}
 		]
 	},

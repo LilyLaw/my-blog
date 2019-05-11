@@ -5,8 +5,8 @@
   "author": "LilyLaw <1444987087@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": " npx webpack-dev-server --config webpack.develop.config.js",
-    "dist": "npx webpack --config webpack.product.config.js"
+    "dev": "webpack-dev-server --config webpack.develop.config.js",
+    "dist": "webpack --config webpack.product.config.js"
   },
   "devDependencies": {
     "@babel/core": "7.1.1",
@@ -14,6 +14,9 @@
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.0",
     "css-loader": "2.0.0",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.13.0",
     "html-webpack-plugin": "3.0.0",
     "less": "3.8.0",
     "less-loader": "4.0.2",
