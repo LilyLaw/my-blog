@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import Section1 from './component/section1.jsx';
-// import Stylecss from './style.less';
+import './style.less';
 import img from './img/bg.jpg';
 
 class App extends React.Component {

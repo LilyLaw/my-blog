@@ -7,21 +7,21 @@ module.exports = {
 		path: path.resolve(__dirname,'dist'),
 		filename: 'app.js'
 	},
-	module:{
-		rules:[
-			{
-				test: /\.(png|jpg|gif|svg|jpeg)$/,
-				use:[
-					{
-						loader: 'url-loader',
-						options: {
-							limit : 10000
-						}
-					},
-				]
-			}
-		]
-	},
+	module: {
+	    rules: [
+	      {
+	        test: /\.(png|jpg|gif)$/,
+	        use: [
+	          {
+	            loader: 'url-loader',
+	            options: {
+	              limit: 8192
+	            }
+	          }
+	        ]
+	      }
+	    ]
+  	},
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:'LilyLaw的个人空间',
