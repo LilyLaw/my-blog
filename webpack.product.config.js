@@ -1,8 +1,11 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let commonConf = require('./webpack.common.config.js');
 const merge = require('webpack-merge');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let proConf = {
+	mode:'production',
 	module:{
 		rules:[
 			{
@@ -35,6 +38,7 @@ let proConf = {
 		]
 	},
 	plugins: [
+		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
 			filename: '[name].[hash].css'
 		})

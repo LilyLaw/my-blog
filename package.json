@@ -6,13 +6,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.develop.config.js",
-    "dist": "webpack --config webpack.product.config.js"
+    "dist": "webpack --config webpack.product.config.js",
+    "testn": "webpack --config nwebpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "7.1.1",
     "@babel/preset-env": "7.4.0",
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.0",
+    "clean-webpack-plugin": "^2.0.2",
     "css-loader": "2.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
@@ -21,7 +23,7 @@
     "html-webpack-plugin": "3.0.0",
     "less": "3.8.0",
     "less-loader": "4.0.2",
-    "mini-css-extract-plugin": "0.5.0",
+    "mini-css-extract-plugin": "^0.6.0",
     "style-loader": "0.21.0",
     "url-loader": "^1.1.2",
     "webpack": "4.29.5",
